@@ -1,5 +1,5 @@
 package Lab9;
-
+import Lab6.Cars;
 import Lab6.Lada;
 import Lab6.Porschee;
 import Lab6.Subaru;

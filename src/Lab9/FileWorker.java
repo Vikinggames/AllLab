@@ -1,11 +1,10 @@
 package Lab9;
 
-import Lab6.Cars;
 import Lab6.Lada;
 import Lab6.Porschee;
 import Lab6.Subaru;
 import Lab7.MySet;
-
+import Lab6.Cars;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -44,8 +43,8 @@ public class FileWorker {
         try {
             OutputStream outputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
-            for (Cars музичнаКомпозиція : музичнаКомпозиціяs) {
-                objectOutputStream.writeObject(музичнаКомпозиція);
+            for (Cars car : музичнаКомпозиціяs) {
+                objectOutputStream.writeObject(car);
             }
             objectOutputStream.close();
             System.out.println(":2)");
