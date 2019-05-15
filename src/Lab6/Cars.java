@@ -3,15 +3,20 @@ package Lab6;
 import Lab8.WrongCapacityValueException;
 import Lab8.WrongCostValueException;
 import Lab8.WrondReduceOfFuelValueException;
-
+import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Cars {
-    public int reduceFuel;
+public abstract class Cars implements Serializable {
+    private int reduceFuel;
     private int сapacityEngine;
     private int cost;
-    public Cars(int reduceFuel, int сapacityEngine,int cost)
-           {
+    private String publicInformation;
+    @Override
+    public boolean equals(Object obj) {
+        return obj.toString().equals(toString());
+    }
+    public Cars(int reduceFuel, int сapacityEngine,int cost,String publicInformation)
+            throws WrondReduceOfFuelValueException, WrongCapacityValueException,WrongCostValueException {
         if (cost <= 0) {
             throw new WrongCostValueException("Проблема в тому, що вартість автомобіля <= 0, і не можно " +
                     "знайти такий автомобіль");
@@ -27,31 +32,14 @@ public abstract class Cars {
         this.reduceFuel = reduceFuel;
         this. cost = cost;
         this.сapacityEngine=сapacityEngine;
+        this.publicInformation = publicInformation;
     }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Cars cars = (Cars) o;
-        return reduceFuel == cars.reduceFuel &&
-                сapacityEngine == cars.сapacityEngine &&
-                cost == cars.cost;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(reduceFuel, сapacityEngine, cost);
-    }
-
     @Override
     public String toString() {
-        return getClass().getSimpleName() + " " + "Reduce Fuel:"+reduceFuel+","+ "CaparacityEngine:"+ сapacityEngine +","+ "Cost:"+cost;
-    }
+        return getClass().getSimpleName()+"(" + " " + "Reduce Fuel:"+reduceFuel+","+ "CaparacityEngine:"+ сapacityEngine +","+ "Cost:"+cost+","+"PublicInformation:"+" "+publicInformation+")";    }
     public int getReduseFuel() {
-
         return reduceFuel;
     }
-
     public int getCost() {
         return cost;
     }
