@@ -5,8 +5,8 @@ import Lab8.WrongCostValueException;
 import Lab8.WrondReduceOfFuelValueException;
 
 public class Lada extends Cars {
-    public Lada(int reduseFuel, int capacityEngine, int cost)
+    public Lada(int reduseFuel, int capacityEngine, int cost,String publicInformation)
             throws WrondReduceOfFuelValueException, WrongCapacityValueException, WrongCostValueException {
-        super(reduseFuel, capacityEngine,cost);
+        super(reduseFuel, capacityEngine,cost,publicInformation);
     }
 }

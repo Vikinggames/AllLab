@@ -55,34 +55,33 @@ public class FileWorker {
 
     public static Cars[] loadObjectsFromFile(String fileName) {
         File file = new File(fileName);
-        ArrayList<Cars> музичнаКомпозиціяs =
+        ArrayList<Cars> cars =
                 new ArrayList<>();
         try {
             InputStream inputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-            Cars музичнаКомпозиція = (Cars) objectInputStream.readObject();
+            Cars car = (Cars) objectInputStream.readObject();
             while (true) {
-                музичнаКомпозиціяs.add(музичнаКомпозиція);
-                музичнаКомпозиція = (Cars) objectInputStream.readObject();
+                cars.add(car);
+                car = (Cars) objectInputStream.readObject();
 
 
             }
 
         } catch (IOException | ClassNotFoundException e) {
         }
-        return музичнаКомпозиціяs.toArray(new Cars[0]);
+        return cars.toArray(new Cars[0]);
     }
 
     public static void saveSymbolToTextFile
             (String fileName, char symbol) throws IOException {
         OutputStream outputStream = new FileOutputStream(fileName);
         outputStream.write(symbol);
-        //todo check closing file
     }
 
     public static void saveStringToTextFile
             (String fileName, String string) throws IOException {
-                FileWriter fileWriter = new FileWriter(fileName);
+        FileWriter fileWriter = new FileWriter(fileName);
         fileWriter.write(string);
         fileWriter.close();
     }

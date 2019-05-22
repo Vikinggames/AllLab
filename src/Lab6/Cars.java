@@ -4,7 +4,6 @@ import Lab8.WrongCapacityValueException;
 import Lab8.WrongCostValueException;
 import Lab8.WrondReduceOfFuelValueException;
 import java.io.Serializable;
-import java.util.Objects;
 
 public abstract class Cars implements Serializable {
     private int reduceFuel;
@@ -47,6 +46,3 @@ public abstract class Cars implements Serializable {
         return сapacityEngine;
     }
 }
-
-
-

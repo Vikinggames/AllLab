@@ -25,28 +25,28 @@ public class TestMySet extends Assert {
 
     @Test(expected =WrondReduceOfFuelValueException.class)
     public void testWrondReduceOfFuelValueException()throws WrondReduceOfFuelValueException{
-        mySet.add(new Lada(-15,35,5000));
+        mySet.add(new Lada(-15,35,5000,"Barsic"));
     }
     @Test(expected =WrongCapacityValueException.class)
     public void testWrongCapacityValueException()throws WrongCapacityValueException{
-        mySet.add(new Lada(15,-35,5000));
+        mySet.add(new Lada(15,-35,5000,"Barsic"));
     }
     @Test(expected =WrongCostValueException.class)
     public void testWrongCostValueException() throws WrongCostValueException{
-        mySet.add(new Porschee(10,10,0));}
+        mySet.add(new Porschee(10,10,0,"Barsic"));}
     @Test
     public void testAdd()
             {
-        mySet.add(new Subaru(2, 10,5800));
+        mySet.add(new Subaru(2, 10,5800,"Barsic"));
         assertEquals(1, mySet.size());
     }
 
     @Test
     public void testContains() {
         Cars cars;
-        cars = new Porschee(3, 20,5000);
+        cars = new Porschee(3, 20,5000,"Barsic");
         mySet.add(cars);
-        cars = new Lada(5, 20,5000);
+        cars = new Lada(5, 20,5000,"Barsic");
         mySet.add(cars);
         assertTrue(mySet.contains(cars));
     }

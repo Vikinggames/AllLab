@@ -32,7 +32,7 @@ public class TaxiStation {
     public void findProposition(int firstIndex,int lastIndex) {
 
         for (int i = 0; i < cars.length; i++) {
-            if (cars[i].getReduseFuel() <= lastIndex && cars[i].reduceFuel >= firstIndex) {
+            if (cars[i].getReduseFuel() <= lastIndex && cars[i].getReduseFuel() >= firstIndex) {
                 System.out.println(cars[i]);
             }
         }

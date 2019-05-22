@@ -10,29 +10,29 @@ import java.util.Iterator;
 public class Main {
     public static void main(String[] args) throws WrondReduceOfFuelValueException {
         MySet myCar = new MySet();
-        myCar.add(new Porschee(-12, 3, 5000));
-        myCar.add(new Lada(10, -4, 6000));
-        myCar.add(new Subaru(11, -3, 5000));
-        myCar.add(new Porschee(12, 3, 5000));
-        myCar.add(new Lada(10, 4, 6000));
-        myCar.add(new Subaru(11, 3, 5000));
-        myCar.add(new Porschee(12, 3, 5000));
-        myCar.add(new Lada(10, 4, 6000));
-        myCar.add(new Subaru(11, 3, 5000));
-        myCar.add(new Porschee(12, 3, 5000));
-        myCar.add(new Lada(10, 4, 6000));
-        myCar.add(new Subaru(11, 3, 5000));
-        myCar.add(new Porschee(12, 3, 5000));
-        myCar.add(new Lada(10, 4, 6000));
-        myCar.add(new Subaru(11, 3, 5000));
-        myCar.add(new Porschee(12, 3, 5000));
+        myCar.add(new Porschee(12, 3, 5000,"Barsic"));
+        myCar.add(new Lada(10, 4, 6000,"Barsic"));
+        myCar.add(new Subaru(11, 3, 5000,"Barsic"));
+        myCar.add(new Porschee(12, 3, 5000,"Barsic"));
+        myCar.add(new Lada(10, 4, 6000,"Barsic"));
+        myCar.add(new Subaru(11, 3, 5000,"Barsic"));
+        myCar.add(new Porschee(12, 3, 5000,"Barsic"));
+        myCar.add(new Lada(10, 4, 6000,"Barsic"));
+        myCar.add(new Subaru(11, 3,5000,"Barsic"));
+        myCar.add(new Porschee(12, 3, 5000,"Barsic"));
+        myCar.add(new Lada(10, 4, 6000,"Barsic"));
+        myCar.add(new Subaru(11, 3, 5000,"Barsic"));
+        myCar.add(new Porschee(12, 3, 5000,"Barsic"));
+        myCar.add(new Lada(10, 4, 6000,"Barsic"));
+        myCar.add(new Subaru(11, 3, 5000,"Barsic"));
+        myCar.add(new Porschee(12, 3, 5000,"Barsic"));
 
         Iterator<Cars> iterator = myCar.iterator();
         System.out.println(myCar.isEmpty());
         System.out.println(myCar.size());
-        System.out.println(myCar.contains(new Subaru(11, 3, 5000)));
-        myCar.remove(new Porschee(12, 3, 5000));
-        System.out.println(myCar.remove((new Porschee(12, 3, 5000))));
+        System.out.println(myCar.contains(new Subaru(11, 3, 5000,"Barsic")));
+        myCar.remove(new Porschee(12, 3, 5000,"Barsic"));
+        System.out.println(myCar.remove((new Porschee(12, 3, 5000,"Barsic"))));
 
 
         int x = 0;

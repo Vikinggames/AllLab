@@ -5,10 +5,11 @@ import Lab8.WrongCapacityValueException;
 import Lab8.WrongCostValueException;
 import Lab8.WrondReduceOfFuelValueException;
 
-public class Porschee extends  Cars {
-    public Porschee(int reduseFuel, int capacityEngine, int cost)
-            throws WrondReduceOfFuelValueException, WrongCapacityValueException, WrongCostValueException {
-        super(reduseFuel, capacityEngine,cost);
+import java.io.Serializable;
 
-    }
+public class Porschee extends Cars implements Serializable {
+    public Porschee(int reduseFuel, int capacityEngine, int cost,String publicInformation)
+            throws WrondReduceOfFuelValueException, WrongCapacityValueException, WrongCostValueException {
+        super(reduseFuel, capacityEngine,cost,publicInformation);
+   }
 }

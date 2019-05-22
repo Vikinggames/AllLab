@@ -1,13 +1,12 @@
-package lab9;
+package Lab9;
 
 import Lab7.MySet;
-import Lab9.FileWorker;
 
 import java.util.Arrays;
 
 public class Main2 {
     public static void main(String[] args) {
-        MySet mySet = FileWorker.loadCollectionFromFile("1.obj");
+        MySet mySet = FileWorker.loadCollectionFromFile("1.txt");
         System.out.println(mySet.size());
         System.out.println(mySet.toArray()[0]);
         System.out.println(mySet.toArray()[1]);

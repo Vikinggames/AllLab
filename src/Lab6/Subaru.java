@@ -5,9 +5,9 @@ import Lab8.WrongCostValueException;
 import Lab8.WrondReduceOfFuelValueException;
 
 public class Subaru extends  Cars {
-    public Subaru(int reduseFuel, int capacityEngine,int cost)
+    public Subaru(int reduseFuel, int capacityEngine,int cost,String publicInformation)
             throws WrondReduceOfFuelValueException, WrongCapacityValueException, WrongCostValueException{
-        super(reduseFuel, capacityEngine,cost);
+        super(reduseFuel, capacityEngine,cost,publicInformation);
 
     }
 }
