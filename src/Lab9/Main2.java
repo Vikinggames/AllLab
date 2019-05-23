@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class Main2 {
     public static void main(String[] args) {
-        MySet mySet = FileWorker.loadCollectionFromFile("1.txt");
+        MySet mySet = FileWorker.loadCollectionFromFile("4.txt");
         System.out.println(mySet.size());
         System.out.println(mySet.toArray()[0]);
         System.out.println(mySet.toArray()[1]);

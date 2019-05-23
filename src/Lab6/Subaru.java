@@ -4,7 +4,7 @@ import Lab8.WrongCapacityValueException;
 import Lab8.WrongCostValueException;
 import Lab8.WrondReduceOfFuelValueException;
 
-public class Subaru extends  Cars {
+public class Subaru extends Car {
     public Subaru(int reduseFuel, int capacityEngine,int cost,String publicInformation)
             throws WrondReduceOfFuelValueException, WrongCapacityValueException, WrongCostValueException{
         super(reduseFuel, capacityEngine,cost,publicInformation);

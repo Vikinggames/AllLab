@@ -1,31 +1,32 @@
 package Lab7;
 
-import Lab6.Cars;
+import Lab6.Car;
 import Lab8.WrondReduceOfFuelValueException;
 import Lab8.WrongCapacityValueException;
 import Lab8.WrongCostValueException;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
-public class MySet implements Set<Cars> {
+public class MySet implements Set<Car>, Serializable {
 
     private static final int INITIAL_CAPACITY = 15;
-    private Cars[] elements = new Cars[INITIAL_CAPACITY];
+    private Car[] elements = new Car[INITIAL_CAPACITY];
     private int size = 0;
 
     public MySet() {
 
     }
 
-    public MySet(Cars taxiStation) {
+    public MySet(Car taxiStation) {
         add(taxiStation);
 
     }
 
-    public MySet(Collection<Cars> collection) {
+    public MySet(Collection<Car> collection) {
         addAll(collection);
     }
 
@@ -44,7 +45,7 @@ public class MySet implements Set<Cars> {
 
     @Override
     public boolean contains(Object o) {
-        Iterator<Cars> iterator = iterator();
+        Iterator<Car> iterator = iterator();
         while (iterator.hasNext()) {
             if (o.equals(iterator.next())) {
                 return true;
@@ -55,8 +56,8 @@ public class MySet implements Set<Cars> {
     }
 
     @Override
-    public Iterator<Cars> iterator() {
-        return new Iterator<Cars>() {
+    public Iterator<Car> iterator() {
+        return new Iterator<Car>() {
             private int index = 0;
 
             @Override
@@ -70,7 +71,7 @@ public class MySet implements Set<Cars> {
             }
 
             @Override
-            public Cars next() {
+            public Car next() {
                 return elements[index++];
             }
         };
@@ -87,7 +88,7 @@ public class MySet implements Set<Cars> {
     }
 
     @Override
-    public boolean add(Cars car) {
+    public boolean add(Car car) {
         if (car.getCost()<= 0) {
             throw new WrongCostValueException("Проблема в тому, що вартість автомобіля <= 0, і не можно " +
                     "знайти такий автомобіль");
@@ -101,7 +102,7 @@ public class MySet implements Set<Cars> {
                     "знайти такий автомобіль");
         }
         if (size() == INITIAL_CAPACITY) {
-            Cars[] element = new Cars[(int) Math.round(INITIAL_CAPACITY * 1.3)];
+            Car[] element = new Car[(int) Math.round(INITIAL_CAPACITY * 1.3)];
             System.arraycopy(elements, 0, element, 0, size());
             element[size++] = car;
             elements = element;
@@ -137,8 +138,8 @@ public class MySet implements Set<Cars> {
     }
 
     @Override
-    public boolean addAll(Collection<? extends Cars> c) {
-        Iterator<? extends Cars> iterator = c.iterator();
+    public boolean addAll(Collection<? extends Car> c) {
+        Iterator<? extends Car> iterator = c.iterator();
         while (iterator.hasNext()) {
             add(iterator.next());
         }

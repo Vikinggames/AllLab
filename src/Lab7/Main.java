@@ -1,5 +1,5 @@
 package Lab7;
-import Lab6.Cars;
+import Lab6.Car;
 import Lab6.Subaru;
 import Lab6.Porschee;
 import Lab6.Lada;
@@ -27,7 +27,7 @@ public class Main {
         myCar.add(new Subaru(11, 3, 5000,"Barsic"));
         myCar.add(new Porschee(12, 3, 5000,"Barsic"));
 
-        Iterator<Cars> iterator = myCar.iterator();
+        Iterator<Car> iterator = myCar.iterator();
         System.out.println(myCar.isEmpty());
         System.out.println(myCar.size());
         System.out.println(myCar.contains(new Subaru(11, 3, 5000,"Barsic")));
@@ -36,7 +36,7 @@ public class Main {
 
 
         int x = 0;
-        for (Cars cars : myCar) {
+        for (Car car : myCar) {
             System.out.println(iterator.next());
             x++;
         }

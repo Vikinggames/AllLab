@@ -4,7 +4,7 @@ import Lab6.Lada;
 import Lab6.Porschee;
 import Lab6.Subaru;
 import Lab7.MySet;
-import Lab6.Cars;
+import Lab6.Car;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -43,7 +43,7 @@ public class FileWorker {
         try {
             OutputStream outputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
-            for (Cars car : музичнаКомпозиціяs) {
+            for (Car car : музичнаКомпозиціяs) {
                 objectOutputStream.writeObject(car);
             }
             objectOutputStream.close();
@@ -53,24 +53,24 @@ public class FileWorker {
         }
     }
 
-    public static Cars[] loadObjectsFromFile(String fileName) {
+    public static Car[] loadObjectsFromFile(String fileName) {
         File file = new File(fileName);
-        ArrayList<Cars> cars =
+        ArrayList<Car> cars =
                 new ArrayList<>();
         try {
             InputStream inputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-            Cars car = (Cars) objectInputStream.readObject();
+            Car car = (Car) objectInputStream.readObject();
             while (true) {
                 cars.add(car);
-                car = (Cars) objectInputStream.readObject();
+                car = (Car) objectInputStream.readObject();
 
 
             }
 
         } catch (IOException | ClassNotFoundException e) {
         }
-        return cars.toArray(new Cars[0]);
+        return cars.toArray(new Car[0]);
     }
 
     public static void saveSymbolToTextFile
@@ -106,5 +106,14 @@ public class FileWorker {
             fileWriter.write(subaru1.toString() + "\n");
         }
         fileWriter.close();
+    }
+    public static void saveObjectsToTextFileCar(String fileName, Car[] cars) throws IOException {
+        //        FileWriter fileWriter = new FileWriter(fileName);
+        OutputStream fileOutputStream = new FileOutputStream(fileName);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        for (Car car : cars) {
+            objectOutputStream.writeObject(car);
+        }
+        objectOutputStream.close();
     }
 }

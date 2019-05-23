@@ -5,7 +5,7 @@ import Lab8.WrongCostValueException;
 import Lab8.WrondReduceOfFuelValueException;
 import java.io.Serializable;
 
-public abstract class Cars implements Serializable {
+public abstract class Car implements Serializable {
     private int reduceFuel;
     private int сapacityEngine;
     private int cost;
@@ -14,7 +14,7 @@ public abstract class Cars implements Serializable {
     public boolean equals(Object obj) {
         return obj.toString().equals(toString());
     }
-    public Cars(int reduceFuel, int сapacityEngine,int cost,String publicInformation)
+    public Car(int reduceFuel, int сapacityEngine, int cost, String publicInformation)
             throws WrondReduceOfFuelValueException, WrongCapacityValueException,WrongCostValueException {
         if (cost <= 0) {
             throw new WrongCostValueException("Проблема в тому, що вартість автомобіля <= 0, і не можно " +

@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 public class TaxiStation {
     private int count;
-    private Cars[] cars;
+    private Car[] cars;
     private int sum;
 
     @Override
@@ -13,13 +13,13 @@ public class TaxiStation {
     }
 
     public TaxiStation(int size) {
-        cars = new Cars[size];
+        cars = new Car[size];
 
     }
 
     public void SortedFuelReduce() {
 
-        Arrays.sort(cars, Comparator.comparing(Cars::getReduseFuel));
+        Arrays.sort(cars, Comparator.comparing(Car::getReduseFuel));
 
     }
 
@@ -39,7 +39,7 @@ public class TaxiStation {
 
     }
 
-    public void add(Cars car) {
+    public void add(Car car) {
         if (count<cars.length) {
             cars[count++] = car;
         }

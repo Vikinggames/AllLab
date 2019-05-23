@@ -1,6 +1,6 @@
 package Lab7;
 
-import Lab6.Cars;
+import Lab6.Car;
 import Lab6.Lada;
 import Lab6.Subaru;
 import Lab6.Porschee;
@@ -43,11 +43,11 @@ public class TestMySet extends Assert {
 
     @Test
     public void testContains() {
-        Cars cars;
-        cars = new Porschee(3, 20,5000,"Barsic");
-        mySet.add(cars);
-        cars = new Lada(5, 20,5000,"Barsic");
-        mySet.add(cars);
-        assertTrue(mySet.contains(cars));
+        Car car;
+        car = new Porschee(3, 20,5000,"Barsic");
+        mySet.add(car);
+        car = new Lada(5, 20,5000,"Barsic");
+        mySet.add(car);
+        assertTrue(mySet.contains(car));
     }
 }
